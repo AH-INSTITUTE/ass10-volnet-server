@@ -109,11 +109,11 @@ client.connect(err => {
 
     //delete
     app.delete('/delete-vol-reg/:id', (req, res) => {
-        volunteerPublicData.deleteOne({_id: ObjectId(req.params.id) })
+        volunteerPublicData.deleteOne({ _id: ObjectId(req.params.id) })
             .then(() => {
-                res.send({ success: true})
+                res.send({ success: true })
             })
     })
 });
 
-app.listen(5000);
+app.listen(process.env.PORT || 5000);
